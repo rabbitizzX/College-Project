@@ -24,16 +24,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.9.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 12.9.1
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -43,13 +43,13 @@ jobs:
         env:
           BASE_PATH: /College-Project/
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          path: "./dist/public"
 
       - name: Deploy to GitHub Pages
         id: deployment
