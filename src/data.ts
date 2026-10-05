@@ -96,18 +96,19 @@ export function processSurvey(rows: SurveyRow[]) {
   };
 }
 
+const assetBase = import.meta.env.BASE_URL;
 // Edit each caption here; generic wording avoids assigning an unverified activity to a photo.
 export const photoItems = [
-  { src: '/assets/fieldwork/photos/fieldwork-01.jpeg', caption: 'Fieldwork photograph 01', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-02.jpeg', caption: 'Fieldwork photograph 02', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-03.jpeg', caption: 'Fieldwork photograph 03', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-04.jpeg', caption: 'Fieldwork photograph 04', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-05.jpeg', caption: 'Fieldwork photograph 05', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-06.jpeg', caption: 'Fieldwork photograph 06', category: 'Fieldwork' },
-  { src: '/assets/fieldwork/photos/fieldwork-07.jpeg', caption: 'Fieldwork photograph 07', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-01.jpeg`, caption: 'Fieldwork photograph 01', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-02.jpeg`, caption: 'Fieldwork photograph 02', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-03.jpeg`, caption: 'Fieldwork photograph 03', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-04.jpeg`, caption: 'Fieldwork photograph 04', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-05.jpeg`, caption: 'Fieldwork photograph 05', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-06.jpeg`, caption: 'Fieldwork photograph 06', category: 'Fieldwork' },
+  { src: `${assetBase}assets/fieldwork/photos/fieldwork-07.jpeg`, caption: 'Fieldwork photograph 07', category: 'Fieldwork' },
 ];
 export const videoItems = Array.from({ length: 7 }, (_, i) => ({
-  src: `/assets/fieldwork/videos/fieldwork-video-${String(i + 1).padStart(2, '0')}.mp4`,
+  src: `${assetBase}assets/fieldwork/videos/fieldwork-video-${String(i + 1).padStart(2, '0')}.mp4`,
   title: `Fieldwork video ${String(i + 1).padStart(2, '0')}`,
   orientation: i < 5 ? 'portrait' as const : 'landscape' as const,
 }));
@@ -124,9 +125,9 @@ export const projectFacts = {
   activities: 'Conducted a survey, interacted with senior citizens, identified common difficulties with smartphones and digital services, and provided guidance on basic digital skills and online safety.',
   participants: '18 senior citizens',
   team: [
-    { name: 'Adnan Shaikh', photo: '/images/adnan.jpeg'},
-    { name: 'Arfa Firfire', photo: '/images/arfa.jpeg'},
-    { name: 'Owais Khan', photo: '/images/owaizz.jpeg'},
-    { name: 'Rehan Chaudhary', photo: '/images/rehan.jpeg'},
+   { name: 'Adnan Shaikh', photo: `${assetBase}images/adnan.jpeg` },
+{ name: 'Arfa Firfire', photo: `${assetBase}images/arfa.jpeg` },
+{ name: 'Owais Khan', photo: `${assetBase}images/owaizz.jpeg` },
+{ name: 'Rehan Chaudhary', photo: `${assetBase}images/rehan.jpeg` },
   ],
 };
