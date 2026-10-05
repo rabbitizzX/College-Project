@@ -96,7 +96,7 @@ export function processSurvey(rows: SurveyRow[]) {
   };
 }
 
-const assetBase = import.meta.env.BASE_URL;
+const assetBase = (import.meta as any).env?.BASE_URL ?? '/';
 // Edit each caption here; generic wording avoids assigning an unverified activity to a photo.
 export const photoItems = [
   { src: `${assetBase}assets/fieldwork/photos/fieldwork-01.jpeg`, caption: 'Fieldwork photograph 01', category: 'Fieldwork' },
